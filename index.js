@@ -13,16 +13,6 @@ app.use(express.urlencoded({ extended: false }));
 app.use("/api/schools", require("./routes/schoolRoute"));
 app.use("/api/devices", require("./routes/devices"));
 
-// app.use(express.static(path.join(__dirname, "../client/build")));
-// app.get("*", function (_, res) {
-//   res.sendFile(
-//     path.join(__dirname, "../client/build/index.html"),
-//     function (err) {
-//       res.status(500).send(err);
-//     }
-//   );
-// });
-
 app.listen(port, () => {
   console.log(`Example app listening on port ${port}`);
 });

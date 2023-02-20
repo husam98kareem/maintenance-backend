@@ -10,6 +10,10 @@ connectDB;
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
+app.use((req, res, next) => {
+  res.header("Access-Control-Allow-Origin", "*");
+  next();
+});
 app.use("/api/schools", require("./routes/schoolRoute"));
 app.use("/api/devices", require("./routes/devices"));
 
